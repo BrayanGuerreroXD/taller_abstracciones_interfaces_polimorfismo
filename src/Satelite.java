@@ -5,18 +5,21 @@
  */
 public class Satelite extends VehiculoEspacial implements NaveRobotica{
     public int cantidadInformacion; //Cantidad en Gb de información
+    private boolean enOrbita;
 
     public Satelite(){
         super();
         this.cantidadInformacion = 0;
+        this.enOrbita = false;
     }
 
-    public Satelite(String nombre, String pais, String combustible, int cantidadCombustible, int cantidadInformacion){
+    public Satelite(String nombre, String pais, String combustible, int cantidadCombustible, int cantidadInformacion, boolean enOrbita){
         this.nombre = nombre;
         this.pais = pais;
         this.combustible = combustible;
         this.cantidadCombustible = cantidadCombustible;
-        this.cantidadInformacion = 0;
+        this.cantidadInformacion = cantidadInformacion;
+        this.enOrbita = enOrbita;
     }
 
     @Override
@@ -27,10 +30,5 @@ public class Satelite extends VehiculoEspacial implements NaveRobotica{
     @Override
     public void transimitir() {
         this.cantidadInformacion--;
-    }
-
-    @Override
-    public void acelerar() {
-        this.cantidadCombustible--;
     }
 }

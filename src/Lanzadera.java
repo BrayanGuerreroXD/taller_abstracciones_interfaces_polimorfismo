@@ -18,9 +18,4 @@ public class Lanzadera extends VehiculoEspacial{
         this.cantidadCombustible = cantidadCombustible;
         this.carga = carga;
     }
-
-    @Override
-    public void acelerar() {
-        this.cantidadCombustible--;
-    }
 }

@@ -34,4 +34,12 @@ public class NaveTripulada extends VehiculoEspacial{
     public void frenar(){
         this.velocidad--;
     }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
 }
