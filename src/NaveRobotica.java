@@ -4,4 +4,6 @@
  * @author Brayan Stewart Guerrero Ordoñez
  */
 public interface NaveRobotica {
+    void recibir();
+    void transimitir();
 }

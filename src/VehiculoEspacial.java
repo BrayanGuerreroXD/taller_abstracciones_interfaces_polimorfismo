@@ -15,4 +15,6 @@ public abstract class VehiculoEspacial {
         this.combustible = null;
         this.cantidadCombustible = 0;
     }
+
+    public abstract void acelerar();
 }
