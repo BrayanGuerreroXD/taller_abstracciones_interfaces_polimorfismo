@@ -8,7 +8,10 @@ import java.util.Scanner;
  */
 public class Test {
     private static final Scanner sc = new Scanner(System.in); //Se crea el lector;
+
     ArrayList<VehiculoEspacial> lista = new ArrayList<>();
+
+    String[] nombresVehiculos = { "Mark", "Dragon", "Explorer", "Falcon", "Atlas", "Delta", "Apolo", "SkyWalker"};
 
     public static void main(String[] args) {
         Test test = new Test();
@@ -71,17 +74,21 @@ public class Test {
         }
     }
 
-    public String buscarVehiculoEspacial(){
+    public void buscarVehiculoEspacial(){
         String respuesta = "No";
-        String nonbre = sc.nextLine();
+        String name = sc.nextLine();
 
         for(VehiculoEspacial vehiculo: lista){
-            if(vehiculo.nombre.equals(nombre)){
+            if(vehiculo.nombre.equals(name)){
                 respuesta = "Si";
                 break;
             }
         }
+        System.out.println(respuesta);
+    }
 
-        return respuesta;
+    public String getNombreVehiculo(String[] listado){
+        int numero = random
+        String nombre =
     }
 }
