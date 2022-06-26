@@ -35,11 +35,26 @@ public class NaveTripulada extends VehiculoEspacial{
         this.velocidad--;
     }
 
+    public void apagarMotores(){
+        this.velocidad = 0;
+    }
+
     public String getDestino() {
         return destino;
     }
 
     public void setDestino(String destino) {
         this.destino = destino;
+    }
+
+    @Override
+    public String toString() {
+        return "NaveTripulada{" +
+                "nombre='" + nombre + '\'' +
+                ", pais='" + pais + '\'' +
+                ", triulantes='"+ tripulantes + '\'' +
+                ", destino='"+ destino + '\'' +
+                ", combustible='" + combustible + '\'' +
+                '}';
     }
 }

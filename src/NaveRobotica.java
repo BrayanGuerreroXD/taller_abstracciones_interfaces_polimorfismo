@@ -4,6 +4,13 @@
  * @author Brayan Stewart Guerrero Ordoñez
  */
 public interface NaveRobotica {
+    /**
+     * Representa la función de recibir información
+     */
     void recibir();
+
+    /**
+     * Representa la función de transmitir información
+     */
     void transimitir();
 }

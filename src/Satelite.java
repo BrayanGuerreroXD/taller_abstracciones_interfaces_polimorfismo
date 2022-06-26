@@ -39,4 +39,13 @@ public class Satelite extends VehiculoEspacial implements NaveRobotica{
     public void setEnOrbita(boolean enOrbita) {
         this.enOrbita = enOrbita;
     }
+
+    @Override
+    public String toString() {
+        return "Satelite{" +
+                "nombre='" + nombre + '\'' +
+                ", pais='" + pais + '\'' +
+                ", combustible='" + combustible + '\'' +
+                '}';
+    }
 }

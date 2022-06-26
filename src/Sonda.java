@@ -35,4 +35,14 @@ public class Sonda extends VehiculoEspacial implements NaveRobotica{
     public String getDestino() {
         return destino;
     }
+
+    @Override
+    public String toString() {
+        return "Sonda{" +
+                "nombre='" + nombre + '\'' +
+                ", pais='" + pais + '\'' +
+                ", destino='"+ destino + '\'' +
+                ", combustible='" + combustible + '\'' +
+                '}';
+    }
 }
