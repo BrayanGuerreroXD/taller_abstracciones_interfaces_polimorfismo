@@ -4,10 +4,13 @@
  * @author Brayan Stewart Guerrero Ordoñez
  */
 public class Lanzadera extends VehiculoEspacial{
+    /**
+     * Variable que representa la carga que transporta la lanzadera.
+     */
     public VehiculoEspacial carga;
 
     /**
-     * Representa una instancia de la clase Lanzadera pero vacio
+     * Representa una instancia de la clase Lanzadera pero vacio.
      */
     public Lanzadera(){
         super();
@@ -15,12 +18,12 @@ public class Lanzadera extends VehiculoEspacial{
     }
 
     /**
-     * Representa una instancia de la clase Lanzadera con parametros de entrada
-     * @param nombre nombre de la lanzadera
-     * @param pais pais de donde proviene
-     * @param combustible combustible que utiliza
-     * @param cantidadCombustible cantidad de combustible del cual dispone
-     * @param carga nave que transporta
+     * Representa una instancia de la clase Lanzadera con parametros de entrada.
+     * @param nombre nombre de la lanzadera.
+     * @param pais pais de donde proviene.
+     * @param combustible combustible que utiliza.
+     * @param cantidadCombustible cantidad de combustible del cual dispone.
+     * @param carga nave que transporta.
      */
     public Lanzadera(String nombre, String pais, String combustible, int cantidadCombustible, VehiculoEspacial carga){
         this.nombre = nombre;
@@ -31,15 +34,15 @@ public class Lanzadera extends VehiculoEspacial{
     }
 
     /**
-     * Función que retorna si hay o no combustible
-     * @return si hay o no combustible
+     * Función que retorna el estado del combustible.
+     * @return estado del combustible
      */
     public boolean ceroCombustible(){
         return this.cantidadCombustible == 0;
     }
 
     /**
-     * Función que permite soltar la carga que transporta la lanzadera
+     * Función que permite soltar la carga que transporta la lanzadera.
      */
     public void soltarCarga(){
         if(ceroCombustible()) carga = null;
