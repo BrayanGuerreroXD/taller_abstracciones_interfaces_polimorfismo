@@ -37,4 +37,6 @@ public abstract class VehiculoEspacial {
     public void acelerar(){
         this.cantidadCombustible--;
     }
+
+    public abstract String toString();
 }

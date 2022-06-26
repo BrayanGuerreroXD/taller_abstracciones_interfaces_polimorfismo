@@ -22,7 +22,7 @@ public class Test {
     public static void main(String[] args) {
         Test test = new Test();
 
-        System.out.println("¿Desea empezar el juego? (Y = Si, N = No");
+        System.out.println("¿Desea empezar el juego? (Y = Si, N = No)");
 
         String seguir = sc.nextLine();
 
@@ -43,6 +43,7 @@ public class Test {
     }
 
     public void imprimirOpciones(){
+        System.out.println("----------");
         System.out.println("Elige lo que haras:");
         System.out.println("1. Crear una lanzadera");
         System.out.println("2. Crear una nave espacial");
@@ -50,6 +51,7 @@ public class Test {
         System.out.println("4. Crear una sonda");
         System.out.println("5. Listar vehiculos espaciales");
         System.out.println("6. Buscar un vehiculo espacial");
+        System.out.println("----------");
     }
 
     public void acciones(int opcion){
@@ -137,27 +139,27 @@ public class Test {
     }
 
     public String getNombreVehiculo(String[] listado){
-        int numero = (int) Math.floor(Math.random()*8);
-        int serie = (int) Math.floor(Math.random()*11);
+        int numero = (int) (Math.random() * 8);
+        int serie = (int) (Math.random()*11);
         return (listado[numero] + " "+serie);
     }
 
     public String getPais(String[] listado){
-        int numero = (int) Math.floor(Math.random()*5);
+        int numero = (int) (Math.random()*5);
         return listado[numero];
     }
 
     public String getCombustible(String[] listado){
-        int numero = (int) Math.floor(Math.random()*7);
+        int numero = (int) (Math.random()*7);
         return listado[numero];
     }
 
     public int getCantidadCombustible(){
-        return (int) Math.floor(Math.random()*11)*1000;
+        return (int) (Math.random()*11)*1000;
     }
 
     public String getDestino(String[] listado){
-        int numero = (int) Math.floor(Math.random()*6);
+        int numero = (int) (Math.random()*6);
         return listado[numero];
     }
 }
