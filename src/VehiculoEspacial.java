@@ -1,5 +1,5 @@
 /**
- *
+ * Representa a un vehículo espacial con sus atributos básicos
  *
  * @author Brayan Stewart Guerrero Ordoñez
  */

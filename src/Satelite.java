@@ -1,5 +1,5 @@
 /**
- *
+ * Representa a un satelite que orbita la Tierra
  *
  * @author Brayan Stewart Guerrero Ordoñez
  */
@@ -30,5 +30,13 @@ public class Satelite extends VehiculoEspacial implements NaveRobotica{
     @Override
     public void transimitir() {
         this.cantidadInformacion--;
+    }
+
+    public boolean isEnOrbita() {
+        return enOrbita;
+    }
+
+    public void setEnOrbita(boolean enOrbita) {
+        this.enOrbita = enOrbita;
     }
 }

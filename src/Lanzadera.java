@@ -18,4 +18,12 @@ public class Lanzadera extends VehiculoEspacial{
         this.cantidadCombustible = cantidadCombustible;
         this.carga = carga;
     }
+
+    public boolean ceroCombustible(){
+        return this.cantidadCombustible == 0;
+    }
+
+    public void soltarCarga(){
+        if(ceroCombustible()) carga = null;
+    }
 }

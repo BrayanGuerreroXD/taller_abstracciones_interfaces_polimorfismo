@@ -1,5 +1,5 @@
 /**
- *
+ * Representa una sonda que analiza algun astro
  *
  * @author Brayan Stewart Guerrero Ordoñez
  */
