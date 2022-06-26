@@ -47,4 +47,17 @@ public class Lanzadera extends VehiculoEspacial{
     public void soltarCarga(){
         if(ceroCombustible()) carga = null;
     }
+
+    /**
+     * Función que retorna el toString de la lanzadera
+     * @return toString
+     */
+    @Override
+    public String toString() {
+        return "Lanzadera{" +
+                "nombre='" + nombre + '\'' +
+                ", pais='" + pais + '\'' +
+                ", combustible='" + combustible + '\'' +
+                '}';
+    }
 }

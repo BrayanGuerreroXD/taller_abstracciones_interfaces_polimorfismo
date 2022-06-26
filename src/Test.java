@@ -12,7 +12,7 @@ public class Test {
 
     private static final Random rd = new Random();
 
-    ArrayList<VehiculoEspacial> lista = new ArrayList<>();
+    ArrayList<VehiculoEspacial> lista = new ArrayList<VehiculoEspacial>();
 
     String[] nombresVehiculos = { "Mark", "Dragon", "Explorer", "Falcon", "Atlas", "Delta", "Apolo", "SkyWalker"};
     String[] nombresPaises = { "EEUU", "Rusia", "Corea del Sur", "Japón", "China"};
@@ -22,16 +22,22 @@ public class Test {
     public static void main(String[] args) {
         Test test = new Test();
 
-        System.out.println("¿Desea empezar el juego?");
+        System.out.println("¿Desea empezar el juego? (Y = Si, N = No");
 
         String seguir = sc.nextLine();
 
         while(true){
-            if (!seguir.equals("Y") && !seguir.equals("y")) break;
+            if (!seguir.equals("Y") && !seguir.equals("y")){
+                System.out.println("Vale, bye bye");
+                break;
+            }
             else {
                 test.imprimirOpciones();
                 int opcion = sc.nextInt();
                 test.acciones(opcion);
+                System.out.println("----------");
+                System.out.println("¿Quieres continuar?");
+                seguir = sc.nextLine();
             }
         }
     }
@@ -44,17 +50,16 @@ public class Test {
         System.out.println("4. Crear una sonda");
         System.out.println("5. Listar vehiculos espaciales");
         System.out.println("6. Buscar un vehiculo espacial");
-        System.out.println("7. Terminar juego");
     }
 
     public void acciones(int opcion){
         switch (opcion){
-            case 1: this.crearLanzadera();
-            case 2: this.crearNaveEspacial();
-            case 3: this.crearSatelite();
-            case 4: this.crearSonda();
-            case 5: this.listarVehiculosEspaciales();
-            case 6: this.buscarVehiculoEspacial();
+            case 1: crearLanzadera();
+            case 2: crearNaveEspacial();
+            case 3: crearSatelite();
+            case 4: crearSonda();
+            case 5: listarVehiculosEspaciales();
+            case 6: buscarVehiculoEspacial();
             default: break;
         }
     }
@@ -107,9 +112,14 @@ public class Test {
     }
 
     public void listarVehiculosEspaciales(){
-        for(VehiculoEspacial vehiculo: lista){
-            vehiculo.toString();
-            System.out.println("------------------");
+        if(lista == null || lista.size() == 0){
+            System.out.println("No hay nada en la lista aún");
+        }
+        else {
+            for (VehiculoEspacial vehiculo : lista) {
+                vehiculo.toString();
+                System.out.println("------------------");
+            }
         }
     }
 
@@ -127,27 +137,27 @@ public class Test {
     }
 
     public String getNombreVehiculo(String[] listado){
-        int numero = (int) Math.floor(Math.random()*7+1);
-        int serie = (int) Math.floor(Math.random()*10+1);
+        int numero = (int) Math.floor(Math.random()*8);
+        int serie = (int) Math.floor(Math.random()*11);
         return (listado[numero] + " "+serie);
     }
 
     public String getPais(String[] listado){
-        int numero = (int) Math.floor(Math.random()*4+1);
+        int numero = (int) Math.floor(Math.random()*5);
         return listado[numero];
     }
 
     public String getCombustible(String[] listado){
-        int numero = (int) Math.floor(Math.random()*6+1);
+        int numero = (int) Math.floor(Math.random()*7);
         return listado[numero];
     }
 
     public int getCantidadCombustible(){
-        return (int) Math.floor(Math.random()*10+1)*1000;
+        return (int) Math.floor(Math.random()*11)*1000;
     }
 
     public String getDestino(String[] listado){
-        int numero = (int) Math.floor(Math.random()*5+1);
+        int numero = (int) Math.floor(Math.random()*6);
         return listado[numero];
     }
 }
