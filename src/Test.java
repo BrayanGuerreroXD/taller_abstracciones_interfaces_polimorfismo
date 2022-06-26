@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  * Representa la clase donde se crearan los vehiculos espaciales
@@ -9,9 +10,14 @@ import java.util.Scanner;
 public class Test {
     private static final Scanner sc = new Scanner(System.in); //Se crea el lector;
 
+    private static final Random rd = new Random();
+
     ArrayList<VehiculoEspacial> lista = new ArrayList<>();
 
     String[] nombresVehiculos = { "Mark", "Dragon", "Explorer", "Falcon", "Atlas", "Delta", "Apolo", "SkyWalker"};
+    String[] nombresPaises = { "EEUU", "Rusia", "Corea del Sur", "Japón", "China"};
+    String[] nombresCombustible = { "Queroseno", "Solido", "Liquido", "Solido + Liquido", "Panel Solar", "Aerozina"};
+    String[] nombresDestino = { "Luna", "Marte", "Jupiter", "Saturno", "Venus", "Plutón"};
 
     public static void main(String[] args) {
         Test test = new Test();
@@ -24,6 +30,8 @@ public class Test {
             if (!seguir.equals("Y") && !seguir.equals("y")) break;
             else {
                 test.imprimirOpciones();
+                int opcion = sc.nextInt();
+                test.acciones(opcion);
             }
         }
     }
@@ -39,7 +47,7 @@ public class Test {
         System.out.println("7. Terminar juego");
     }
 
-    public void crearVehiculoEspacial(int opcion){
+    public void acciones(int opcion){
         switch (opcion){
             case 1: this.crearLanzadera();
             case 2: this.crearNaveEspacial();
@@ -51,20 +59,51 @@ public class Test {
         }
     }
 
-    public VehiculoEspacial crearLanzadera(){
-
+    public void crearLanzadera(){
+        VehiculoEspacial lanzadera = new Lanzadera(
+                getNombreVehiculo(this.nombresVehiculos),
+                getPais(this.nombresPaises),
+                getCombustible(this.nombresCombustible),
+                getCantidadCombustible(),
+                null
+        );
+        lista.add(lanzadera);
     }
 
-    public VehiculoEspacial crearNaveEspacial(){
-
+    public void crearNaveEspacial(){
+        VehiculoEspacial nave = new NaveTripulada(
+                getNombreVehiculo(this.nombresVehiculos),
+                getPais(this.nombresPaises),
+                getCombustible(this.nombresCombustible),
+                getCantidadCombustible(),
+                (int) Math.floor(Math.random()*6+1),
+                getDestino(this.nombresDestino)
+        );
+        lista.add(nave);
     }
 
-    public VehiculoEspacial crearSatelite(){
-
+    public void crearSatelite(){
+        VehiculoEspacial satelite = new Satelite(
+                getNombreVehiculo(this.nombresVehiculos),
+                getPais(this.nombresPaises),
+                getCombustible(this.nombresCombustible),
+                getCantidadCombustible(),
+                (int) Math.floor(Math.random()*6+1),
+                rd.nextBoolean()
+        );
+        lista.add(satelite);
     }
 
-    public VehiculoEspacial crearSonda(){
-
+    public void crearSonda(){
+        VehiculoEspacial sonda = new Sonda(
+                getNombreVehiculo(this.nombresVehiculos),
+                getPais(this.nombresPaises),
+                getCombustible(this.nombresCombustible),
+                getCantidadCombustible(),
+                getDestino(this.nombresDestino),
+                (int) Math.floor(Math.random()*6+1)
+        );
+        lista.add(sonda);
     }
 
     public void listarVehiculosEspaciales(){
@@ -88,7 +127,27 @@ public class Test {
     }
 
     public String getNombreVehiculo(String[] listado){
-        int numero = random
-        String nombre =
+        int numero = (int) Math.floor(Math.random()*7+1);
+        int serie = (int) Math.floor(Math.random()*10+1);
+        return (listado[numero] + " "+serie);
+    }
+
+    public String getPais(String[] listado){
+        int numero = (int) Math.floor(Math.random()*4+1);
+        return listado[numero];
+    }
+
+    public String getCombustible(String[] listado){
+        int numero = (int) Math.floor(Math.random()*6+1);
+        return listado[numero];
+    }
+
+    public int getCantidadCombustible(){
+        return (int) Math.floor(Math.random()*10+1)*1000;
+    }
+
+    public String getDestino(String[] listado){
+        int numero = (int) Math.floor(Math.random()*5+1);
+        return listado[numero];
     }
 }
